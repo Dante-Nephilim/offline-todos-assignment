@@ -18,6 +18,7 @@ export default function TodoContextProvider(props) {
     }
   }, []);
   function changeStatus(id) {
+    console.log({ id });
     let bufferArray = [...todos];
     bufferArray.forEach((element) => {
       if (element.id === id) {
@@ -26,25 +27,16 @@ export default function TodoContextProvider(props) {
         } else {
           element.status = "active";
         }
+        element.updatedAt = new Date();
       }
     });
     setTodos(bufferArray);
     compareStatus();
   }
-  function compareTemplate(a, b) {
-    const status1 = a.status;
-    const status2 = b.status;
-    let comparison = 0;
-    if (status1 > status2) {
-      comparison = 1;
-    } else if (status1 < status2) {
-      comparison = -1;
-    }
-    return comparison;
-  }
+
   function compareStatus() {
     let objAry = [...todos];
-    objAry = objAry.sort(compareTemplate);
+    objAry = objAry.sort((a, b) => b.updatedAt - a.updatedAt);
     setTodos(objAry);
   }
 
