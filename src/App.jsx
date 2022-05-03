@@ -4,7 +4,7 @@ import TodosForm from "./components/TodosForm";
 
 function App() {
   return (
-    <div>
+    <div className="mx-auto max-w-md mt-10">
       <TodosForm />
       <RenderTodos />
     </div>
