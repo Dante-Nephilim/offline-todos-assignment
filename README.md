@@ -1,6 +1,10 @@
 # Offline Todos Assignment
 
-React app to manage todos offline using localStorage and Context APi
+React app to manage todos offline using localStorage and Context API
+
+## Live app
+
+- [View app on Vercel](https://offline-todos-assignment.vercel.app/)
 
 ## Dev setup
 
